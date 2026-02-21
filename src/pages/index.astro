@@ -131,6 +131,9 @@ const experience = [
   <header>
     <nav>
       <span class="logo"><span class="accent">PP</span></span>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#approach">Approach</a></li>
@@ -337,11 +340,19 @@ const experience = [
   nav {
     max-width: 860px; margin: 0 auto; padding: 0 24px;
     height: 56px; display: flex; align-items: center; justify-content: space-between;
+    position: relative;
   }
   .logo { font-family: var(--mono); font-size: 1rem; font-weight: 700; letter-spacing: 2px; }
   nav ul { list-style: none; display: flex; gap: 28px; }
   nav ul a { color: var(--muted); font-size: 0.875rem; transition: color 0.2s; }
   nav ul a:hover { color: var(--text); text-decoration: none; }
+  nav ul a:focus { outline: none; }
+  nav ul a:focus-visible { outline: 1px solid var(--accent); border-radius: 2px; }
+  .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.22s, opacity 0.22s; }
+  nav.open .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  nav.open .hamburger span:nth-child(2) { opacity: 0; }
+  nav.open .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
   /* ─── SECTIONS ─── */
   section { padding: 96px 0; }
@@ -510,11 +521,35 @@ const experience = [
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 600px) {
-    nav ul { gap: 16px; }
-    nav ul li:nth-child(n+5) { display: none; }
+    .hamburger { display: flex; }
+    nav ul {
+      display: none; flex-direction: column; gap: 0;
+      position: absolute; top: 56px; left: 0; right: 0;
+      background: var(--bg); border-bottom: 1px solid var(--border);
+      padding: 8px 0 16px; z-index: 99;
+    }
+    nav ul li { border-bottom: 1px solid var(--border); }
+    nav ul li:last-child { border-bottom: none; }
+    nav ul a { display: block; padding: 14px 24px; font-size: 0.9375rem; color: var(--text); }
+    nav.open ul { display: flex; }
     .stack-grid { grid-template-columns: 1fr; gap: 24px; }
     .approach-grid { grid-template-columns: 1fr; gap: 16px; }
     .project-card { padding: 20px; }
     .job-header { flex-direction: column; }
   }
 </style>
+
+<script>
+  const nav = document.querySelector('nav');
+  const btn = document.querySelector('.hamburger');
+  if (nav && btn) {
+    btn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }));
+  }
+</script>
