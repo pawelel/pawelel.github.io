@@ -1,0 +1,473 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const techStack = [
+  {
+    category: 'Primary',
+    items: ['Flutter', 'Dart', 'C#', '.NET Core', 'Blazor Server'],
+  },
+  {
+    category: 'Web & Mobile',
+    items: ['Angular', 'ASP.NET MVC', 'MAUI', 'TypeScript'],
+  },
+  {
+    category: 'Databases',
+    items: ['MSSQL', 'PostgreSQL', 'MySQL', 'MongoDB', 'Entity Framework'],
+  },
+  {
+    category: 'DevOps & Tools',
+    items: ['Azure DevOps', 'Docker', 'Git', 'BitBucket', 'Jira', 'Confluence'],
+  },
+  {
+    category: 'Reporting & UI',
+    items: ['DevExpress', 'Grafana', 'Power BI', 'SAP Web Intelligence'],
+  },
+  {
+    category: 'Low-Code',
+    items: ['PowerApps', 'Power Automate'],
+  },
+];
+
+const projects = [
+  {
+    title: 'Flutter Field Operations App',
+    stack: ['Flutter', 'Dart', 'Blazor Server', 'ASP.NET Core'],
+    description: 'Mobile application for field operatives working in distributed teams. Implemented fault reporting with multi-step navigation, sticker-based workflows, ticket scanning with recent scan history, attachment handling, and PDF interaction validation. Served Android and Flutter clients from a shared backend.',
+    highlights: ['Fault report flow', 'Scan history', 'PDF validation', 'Multi-platform'],
+    link: null,
+  },
+  {
+    title: 'Real-time GPS Tracking Dashboard',
+    stack: ['Blazor Server', 'ASP.NET Core', 'EF Core', 'PostgreSQL'],
+    description: 'Real-time vehicle tracking and route management dashboard integrating with GPS hardware over TCP. Handled driver and vehicle data, live position updates, and EF Core migrations for evolving data models. Designed for high-frequency event ingestion from embedded devices.',
+    highlights: ['Live GPS positions', 'Driver/vehicle data', 'EF Core migrations', 'TCP integration'],
+    link: null,
+  },
+  {
+    title: 'Device Performance Testing System',
+    stack: ['ASP.NET Core', 'Android', 'REST API'],
+    description: 'Backend infrastructure for automated performance testing of Android terminal devices. Built device enrollment flows, APK distribution and download tracking, test scenario execution, and structured metric collection with detailed logging. Enabled repeatable acceptance testing across device fleets.',
+    highlights: ['Device enrollment', 'APK distribution', 'Scenario runner', 'Metric logging'],
+    link: null,
+  },
+  {
+    title: 'Multi-platform POS & Reporting Backend',
+    stack: ['ASP.NET Core', 'Android', 'Flutter', 'DevExpress'],
+    description: 'Ticketing and workforce management backend serving Android and Flutter clients simultaneously. Added disciplinary notice and discrepancy report modules, improved date-range queries for shift autocomplete, enhanced insertion methods to return generated IDs, and extended ExplanationReport handling with structured logging.',
+    highlights: ['Android + Flutter clients', 'Disciplinary notices', 'Shift autocomplete', 'DevExpress Reports'],
+    link: null,
+  },
+  {
+    title: 'MCP Server for Outline Wiki',
+    stack: ['TypeScript', 'Node.js', 'MCP'],
+    description: 'Open-source Model Context Protocol server enabling AI assistants to interact with Outline documentation services. Implemented robust HTTP retry logic with Retry-After header handling, rate-limit backoff, URL sanitization, API key security, and a comprehensive test suite covering edge cases.',
+    highlights: ['Rate limit handling', 'Retry-After support', 'URL sanitization', 'Test coverage'],
+    link: 'https://github.com/pawelel/mcp-outline',
+  },
+];
+
+const experience = [
+  {
+    role: 'Software Developer',
+    company: 'Antumo P.S.A. (rebranded from M2T)',
+    period: '2024 – present',
+    items: [
+      'Developing a distributed railway operations system (ASP.NET Core MVC, Blazor Server, Flutter)',
+      'Scaled backend to handle 30,000+ new events per day through DB and query optimization',
+      'Built advanced reports and views using DevExpress components',
+      'Created custom MVC tag helpers and integrated custom CSS utilities',
+      'Integrated Teltonika GPS devices and implemented real-time train tracking in Blazor Server',
+      'Developed performance testing tools and GPS vehicle simulators',
+    ],
+  },
+  {
+    role: 'Junior Developer',
+    company: 'M2T Prosta Spółka Akcyjna',
+    period: '2023',
+    items: [
+      'Developed web and mobile apps using ASP.NET Zero',
+      'Optimised document workflows and audit tooling',
+    ],
+  },
+  {
+    role: 'Business Consultant',
+    company: 'ARP Ideas sp. z o.o.',
+    period: '2022',
+    items: [
+      'Built PowerApps and Power Automate applications',
+      'Analysed and documented User Stories',
+    ],
+  },
+  {
+    role: 'Associate Consultant / Senior IT/OT Specialist',
+    company: 'HCL Poland',
+    period: '2016 – 2022',
+    items: [
+      'Developed Blazor applications for internal tooling',
+      'Automated SAP reporting workflows',
+      'Provided IT/OT system support for Volkswagen production lines',
+    ],
+  },
+];
+---
+
+<Layout>
+  <!-- NAV -->
+  <header>
+    <nav>
+      <span class="logo"><span class="accent">PP</span></span>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="about" class="hero">
+      <div class="container">
+        <p class="hero-greeting"><span class="mono muted">Hello, I'm</span></p>
+        <h1>Paweł Przytuła</h1>
+        <h2>Full Stack Developer</h2>
+        <p class="hero-bio">
+          Specialising in <strong>.NET / Blazor</strong>, <strong>ASP.NET Core MVC</strong>, <strong>Angular</strong>, and <strong>Flutter</strong>.
+          I design and optimise systems for the railway industry — web, mobile, and GPS integrations —
+          handling <strong>30,000+ events/day</strong> with real-time visualisation. Based in Poznań, Poland.
+        </p>
+        <div class="hero-links">
+          <a href="https://github.com/pawelel" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+          </a>
+          <a href="mailto:REMOVED" class="btn btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email
+          </a>
+          <a href="https://blazorschool.com" target="_blank" rel="noopener" class="btn btn-outline">
+            blazorschool.com
+          </a>
+        </div>
+        <div class="scroll-hint">
+          <span class="mono muted">scroll down</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section id="stack">
+      <div class="container">
+        <h3 class="section-label"><span class="mono accent">02.</span> Tech Stack</h3>
+        <h2 class="section-title">What I work with</h2>
+        <div class="stack-grid">
+          {techStack.map((group) => (
+            <div class="stack-group">
+              <p class="stack-category muted mono">{group.category}</p>
+              <div class="stack-items">
+                {group.items.map((item) => (
+                  <span class="tag">{item}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <h3 class="section-label"><span class="mono accent">03.</span> Projects</h3>
+        <h2 class="section-title">Selected work</h2>
+        <div class="projects-list">
+          {projects.map((project, i) => (
+            <article class="project-card">
+              <div class="project-header">
+                <span class="project-number mono muted">0{i + 1}</span>
+                <h3 class="project-title">{project.title}</h3>
+                {project.link && (
+                  <a href={project.link} target="_blank" rel="noopener" class="project-link" title="View on GitHub">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  </a>
+                )}
+              </div>
+              <p class="project-desc">{project.description}</p>
+              <div class="project-highlights">
+                {project.highlights.map((h) => (
+                  <span class="highlight">{h}</span>
+                ))}
+              </div>
+              <div class="project-stack">
+                {project.stack.map((t) => (
+                  <span class="tag tag-sm">{t}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="container">
+        <h3 class="section-label"><span class="mono accent">04.</span> Experience</h3>
+        <h2 class="section-title">Work history</h2>
+        <div class="timeline">
+          {experience.map((job, i) => (
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              {i < experience.length - 1 && <div class="timeline-line"></div>}
+              <div class="timeline-content">
+                <div class="job-header">
+                  <div>
+                    <h3 class="job-role">{job.role}</h3>
+                    <p class="job-company">{job.company}</p>
+                  </div>
+                  <span class="job-period mono">{job.period}</span>
+                </div>
+                <ul class="job-items">
+                  {job.items.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="container">
+        <h3 class="section-label"><span class="mono accent">05.</span> Education</h3>
+        <h2 class="section-title">Academic background</h2>
+        <div class="edu-card">
+          <div class="edu-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div>
+            <h3 class="edu-degree">B.Eng. Computer Science</h3>
+            <p class="edu-school">Wyższa Szkoła Bankowa w Poznaniu (WSB University)</p>
+            <p class="mono muted edu-year">2018 – 2022</p>
+          </div>
+        </div>
+        <div class="interests">
+          <h4 class="interests-title muted">Beyond work</h4>
+          <div class="interests-items">
+            <div class="interest-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              <span>Open source – contributions to Blazor School & production tools</span>
+            </div>
+            <div class="interest-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+              <span>Learning piano</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="mono muted">Built with <a href="https://astro.build" target="_blank" rel="noopener">Astro</a> · <a href="https://github.com/pawelel" target="_blank" rel="noopener">github.com/pawelel</a></p>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  /* ─── UTILITIES ─── */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+  .mono { font-family: var(--mono); font-size: 0.85em; }
+  .muted { color: var(--muted); }
+  .accent { color: var(--accent); }
+
+  /* ─── NAV ─── */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(9, 9, 11, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav {
+    max-width: 860px; margin: 0 auto; padding: 0 24px;
+    height: 56px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo { font-family: var(--mono); font-size: 1rem; font-weight: 700; letter-spacing: 2px; }
+  nav ul { list-style: none; display: flex; gap: 28px; }
+  nav ul a { color: var(--muted); font-size: 0.875rem; transition: color 0.2s; }
+  nav ul a:hover { color: var(--text); text-decoration: none; }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 96px 0; }
+  section:first-child { padding-top: 0; }
+
+  .section-label { font-size: 0.875rem; color: var(--muted); margin-bottom: 8px; }
+  .section-title { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; margin-bottom: 48px; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding-top: 80px;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-greeting { margin-bottom: 12px; }
+  .hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 700; line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .hero h2 {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 400; color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .hero-bio {
+    max-width: 560px; color: var(--muted);
+    font-size: 1.05rem; line-height: 1.75;
+    margin-bottom: 36px;
+  }
+  .hero-bio strong { color: var(--text); font-weight: 500; }
+  .hero-links { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 64px; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 20px; border-radius: var(--radius);
+    font-size: 0.875rem; font-weight: 500; transition: all 0.2s;
+    cursor: pointer; border: 1px solid transparent;
+  }
+  .btn:hover { text-decoration: none; transform: translateY(-1px); }
+  .btn-primary {
+    background: var(--accent); color: var(--bg); border-color: var(--accent);
+  }
+  .btn-primary:hover { background: #67e8f9; border-color: #67e8f9; }
+  .btn-outline {
+    background: transparent; color: var(--text); border-color: var(--border);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  .scroll-hint {
+    display: flex; align-items: center; gap: 8px; color: var(--muted);
+    font-size: 0.8rem;
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ─── TECH STACK ─── */
+  #stack { border-bottom: 1px solid var(--border); }
+  .stack-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 32px; }
+  .stack-category { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+  .stack-items { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .tag {
+    display: inline-block; padding: 4px 12px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 4px; font-size: 0.8rem; color: var(--text);
+    transition: border-color 0.2s;
+  }
+  .tag:hover { border-color: var(--accent); color: var(--accent); }
+  .tag-sm { font-size: 0.75rem; padding: 3px 10px; }
+
+  /* ─── PROJECTS ─── */
+  #projects { border-bottom: 1px solid var(--border); }
+  .projects-list { display: flex; flex-direction: column; gap: 32px; }
+
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 28px 32px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .project-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+  .project-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+  .project-number { font-size: 0.75rem; letter-spacing: 0.1em; }
+  .project-title { font-size: 1.15rem; font-weight: 600; flex: 1; }
+  .project-link { color: var(--muted); display: flex; align-items: center; transition: color 0.2s; }
+  .project-link:hover { color: var(--accent); }
+  .project-desc { color: var(--muted); line-height: 1.7; margin-bottom: 16px; font-size: 0.95rem; }
+  .project-highlights { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .highlight {
+    display: inline-block; padding: 3px 10px;
+    background: var(--accent-dim); border: 1px solid rgba(34,211,238,0.3);
+    border-radius: 4px; font-size: 0.75rem; color: var(--accent);
+    font-family: var(--mono);
+  }
+  .project-stack { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  /* ─── EXPERIENCE ─── */
+  #experience { border-bottom: 1px solid var(--border); }
+  .timeline { position: relative; display: flex; flex-direction: column; gap: 0; }
+  .timeline-item { display: flex; gap: 20px; }
+  .timeline-dot {
+    width: 10px; height: 10px; min-width: 10px;
+    background: var(--accent); border-radius: 50%;
+    margin-top: 6px;
+  }
+  .timeline-line-wrapper { display: flex; flex-direction: column; align-items: center; }
+
+  .timeline-content { padding-bottom: 40px; flex: 1; }
+  .job-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    flex-wrap: wrap; gap: 8px; margin-bottom: 14px;
+  }
+  .job-role { font-size: 1.05rem; font-weight: 600; margin-bottom: 2px; }
+  .job-company { color: var(--accent); font-size: 0.9rem; }
+  .job-period { color: var(--muted); font-size: 0.8rem; white-space: nowrap; }
+  .job-items { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .job-items li {
+    color: var(--muted); font-size: 0.9rem; padding-left: 16px; position: relative;
+  }
+  .job-items li::before {
+    content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.8em;
+  }
+
+  /* ─── EDUCATION ─── */
+  #education { border-bottom: 1px solid var(--border); }
+  .edu-card {
+    display: flex; align-items: flex-start; gap: 20px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px 28px; margin-bottom: 40px;
+  }
+  .edu-icon {
+    width: 48px; height: 48px; min-width: 48px;
+    background: var(--accent-dim); border: 1px solid rgba(34,211,238,0.3);
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    color: var(--accent);
+  }
+  .edu-degree { font-size: 1.05rem; font-weight: 600; margin-bottom: 4px; }
+  .edu-school { color: var(--muted); font-size: 0.9rem; margin-bottom: 4px; }
+  .edu-year { font-size: 0.8rem; }
+
+  .interests-title { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+  .interests-items { display: flex; flex-direction: column; gap: 12px; }
+  .interest-item { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 0.9rem; }
+  .interest-item svg { color: var(--accent); flex-shrink: 0; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+  }
+  footer .container { display: flex; justify-content: center; }
+  footer p { font-size: 0.8rem; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 600px) {
+    nav ul { gap: 16px; }
+    nav ul li:nth-child(n+4) { display: none; }
+    .stack-grid { grid-template-columns: 1fr; gap: 24px; }
+    .project-card { padding: 20px; }
+    .job-header { flex-direction: column; }
+  }
+</style>
