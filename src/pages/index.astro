@@ -46,7 +46,7 @@ const projects = [
   {
     title: 'MDM Load Testing Simulator',
     stack: ['.NET', 'C#', 'PostgreSQL', 'Kubernetes', 'Grafana', 'Prometheus'],
-    description: 'Built a simulator emulating 15,000 concurrent Android MDM agents to validate platform stability before production rollout. Each virtual device runs a configurable lifecycle: enrollment, periodic command polling with jitter, heartbeat reporting, command execution, and real APK downloads to generate authentic network load. Designed four test scenarios — enrollment burst, 4-hour baseline load, mass APK distribution (50 MB × 15k devices), and command burst — monitored in real time via Grafana dashboards fed by Prometheus and postgres-exporter. Acceptance criteria: API p50 < 500 ms, CPU < 80%, no DB queries > 1 s, zero deadlocks.',
+    description: 'Built a simulator emulating 15,000 concurrent Android MDM agents to validate platform stability before production rollout. Each virtual device runs a configurable lifecycle: enrollment, periodic command polling with jitter, heartbeat reporting, command execution, and real APK downloads to generate authentic network load. Designed four test scenarios — enrollment burst, 4-hour baseline load, mass APK distribution (50 MB × 15k devices), and command burst — monitored in real time via Grafana dashboards fed by Prometheus and postgres-exporter. Acceptance criteria: API p50 &lt; 500 ms, CPU &lt; 80%, no DB queries &gt; 1 s, zero deadlocks.',
     highlights: ['15k virtual devices', 'APK distribution load', '4 test scenarios', 'Grafana monitoring'],
     link: null,
   },
