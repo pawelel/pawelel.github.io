@@ -46,8 +46,9 @@ const projects = [
   {
     title: 'MDM Load Testing Simulator',
     stack: ['.NET', 'C#', 'PostgreSQL', 'Kubernetes', 'Grafana', 'Prometheus'],
-    description: 'Built a simulator emulating 15,000 concurrent Android MDM agents to validate platform stability before production rollout. Each virtual device runs a configurable lifecycle: enrollment, periodic command polling with jitter, heartbeat reporting, command execution, and real APK downloads to generate authentic network load. Designed four test scenarios — enrollment burst, 4-hour baseline load, mass APK distribution (50 MB × 15k devices), and command burst — monitored in real time via Grafana dashboards fed by Prometheus and postgres-exporter. Acceptance criteria: API p50 &lt; 500 ms, CPU &lt; 80%, no DB queries &gt; 1 s, zero deadlocks.',
+    description: 'Built a simulator emulating 15,000 concurrent Android MDM agents to validate platform stability before production rollout. Each virtual device runs a configurable lifecycle: enrollment, periodic command polling with jitter, heartbeat reporting, command execution, and real APK downloads to generate authentic network load. Designed four test scenarios — enrollment burst, 4-hour baseline load, mass APK distribution (50 MB × 15k devices), and command burst — monitored in real time via Grafana dashboards fed by Prometheus and postgres-exporter.',
     highlights: ['15k virtual devices', 'APK distribution load', '4 test scenarios', 'Grafana monitoring'],
+    criteria: ['p50 < 500 ms', 'CPU < 80%', 'DB queries < 1 s', 'zero deadlocks'],
     link: null,
   },
   {
@@ -192,6 +193,14 @@ const experience = [
                 )}
               </div>
               <p class="project-desc">{project.description}</p>
+              {project.criteria && (
+                <div class="project-criteria">
+                  <span class="criteria-label">Acceptance criteria:</span>
+                  {project.criteria.map((c) => (
+                    <span class="criterion">{c}</span>
+                  ))}
+                </div>
+              )}
               <div class="project-highlights">
                 {project.highlights.map((h) => (
                   <span class="highlight">{h}</span>
@@ -392,6 +401,9 @@ const experience = [
   .project-link { color: var(--muted); display: flex; align-items: center; transition: color 0.2s; }
   .project-link:hover { color: var(--accent); }
   .project-desc { color: var(--muted); line-height: 1.7; margin-bottom: 16px; font-size: 0.95rem; }
+  .project-criteria { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 12px; }
+  .criteria-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-right: 2px; }
+  .criterion { font-family: var(--font-mono); font-size: 0.75rem; white-space: nowrap; background: rgba(34,211,238,0.08); color: var(--accent); border: 1px solid rgba(34,211,238,0.2); border-radius: 4px; padding: 2px 7px; }
   .project-highlights { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
   .highlight {
     display: inline-block; padding: 3px 10px;
