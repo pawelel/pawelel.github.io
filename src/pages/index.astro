@@ -174,7 +174,50 @@ const experience = [
     <section id="approach">
       <div class="container">
         <h3 class="section-label"><span class="mono accent">02.</span> How I Work</h3>
-        <h2 class="section-title">Beyond the sprint</h2>
+        <h2 class="section-title">Development process</h2>
+
+        <p class="subsection-label">Within the sprint</p>
+        <div class="sprint-phases">
+          <div class="phase">
+            <p class="phase-num mono">01</p>
+            <p class="phase-name">Planning</p>
+            <ul>
+              <li>Scope &amp; acceptance criteria</li>
+              <li>Story points (Fibonacci)</li>
+              <li>Priority assignment</li>
+            </ul>
+          </div>
+          <div class="phase">
+            <p class="phase-num mono">02</p>
+            <p class="phase-name">Development</p>
+            <ul>
+              <li>Implementation</li>
+              <li>Blocker flagged at daily</li>
+              <li>Task-switch until resolved</li>
+              <li>Return &amp; finish</li>
+            </ul>
+          </div>
+          <div class="phase">
+            <p class="phase-num mono">03</p>
+            <p class="phase-name">Quality</p>
+            <ul>
+              <li>Manual &amp; smoke tests</li>
+              <li>Unit / integration tests</li>
+            </ul>
+          </div>
+          <div class="phase">
+            <p class="phase-num mono">04</p>
+            <p class="phase-name">Delivery</p>
+            <ul>
+              <li>PR + CI verification</li>
+              <li>Code review</li>
+              <li>Version bump &amp; changelog</li>
+              <li>Deploy / mobile release</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="subsection-label" style="margin-top: 56px;">Beyond the sprint</p>
         <div class="approach-grid">
           <div class="approach-item">
             <p class="approach-title">Ticket &amp; log analysis</p>
@@ -359,6 +402,15 @@ const experience = [
   section:first-child { padding-top: 0; }
 
   .section-label { font-size: 0.875rem; color: var(--muted); margin-bottom: 8px; }
+  .subsection-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 20px; }
+  .sprint-phases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .phase { padding: 24px; border-right: 1px solid var(--border); }
+  .phase:last-child { border-right: none; }
+  .phase-num { font-size: 0.75rem; color: var(--accent); margin-bottom: 8px; letter-spacing: 0.05em; }
+  .phase-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 14px; color: var(--text); }
+  .phase ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px; }
+  .phase ul li { font-size: 0.8rem; color: var(--muted); padding-left: 12px; position: relative; line-height: 1.4; }
+  .phase ul li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; top: 1px; }
   .approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 8px; }
   .approach-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
   .approach-title { font-weight: 600; color: var(--accent); margin-bottom: 10px; font-size: 0.95rem; }
@@ -534,6 +586,10 @@ const experience = [
     nav.open ul { display: flex; }
     .stack-grid { grid-template-columns: 1fr; gap: 24px; }
     .approach-grid { grid-template-columns: 1fr; gap: 16px; }
+    .sprint-phases { grid-template-columns: 1fr 1fr; }
+    .phase { border-right: none; border-bottom: 1px solid var(--border); }
+    .phase:nth-child(odd) { border-right: 1px solid var(--border); }
+    .phase:nth-last-child(-n+2) { border-bottom: none; }
     .project-card { padding: 20px; }
     .job-header { flex-direction: column; }
   }
