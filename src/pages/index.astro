@@ -133,6 +133,7 @@ const experience = [
       <span class="logo"><span class="accent">PP</span></span>
       <ul>
         <li><a href="#about">About</a></li>
+        <li><a href="#approach">Approach</a></li>
         <li><a href="#stack">Stack</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -166,10 +167,32 @@ const experience = [
       </div>
     </section>
 
+    <!-- HOW I WORK -->
+    <section id="approach">
+      <div class="container">
+        <h3 class="section-label"><span class="mono accent">02.</span> How I Work</h3>
+        <h2 class="section-title">Beyond the sprint</h2>
+        <div class="approach-grid">
+          <div class="approach-item">
+            <p class="approach-title">Ticket &amp; log analysis</p>
+            <p class="approach-desc">When a report comes in, I trace it through logs and system behavior to find the actual root cause before writing a single line of code.</p>
+          </div>
+          <div class="approach-item">
+            <p class="approach-title">Problem classification</p>
+            <p class="approach-desc">I distinguish between bugs, missing features, and improvement opportunities — and describe each clearly so the team can make an informed decision about priority.</p>
+          </div>
+          <div class="approach-item">
+            <p class="approach-title">Backlog contribution</p>
+            <p class="approach-desc">Anything worth addressing gets written up and added to the backlog for the next sprint discussion — not left as a mental note or a stray comment in code.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- TECH STACK -->
     <section id="stack">
       <div class="container">
-        <h3 class="section-label"><span class="mono accent">02.</span> Tech Stack</h3>
+        <h3 class="section-label"><span class="mono accent">03.</span> Tech Stack</h3>
         <h2 class="section-title">What I work with</h2>
         <div class="stack-grid">
           {techStack.map((group) => (
@@ -189,7 +212,7 @@ const experience = [
     <!-- PROJECTS -->
     <section id="projects">
       <div class="container">
-        <h3 class="section-label"><span class="mono accent">03.</span> Projects</h3>
+        <h3 class="section-label"><span class="mono accent">04.</span> Projects</h3>
         <h2 class="section-title">Selected work</h2>
         <div class="projects-list">
           {projects.map((project, i) => (
@@ -231,7 +254,7 @@ const experience = [
     <!-- EXPERIENCE -->
     <section id="experience">
       <div class="container">
-        <h3 class="section-label"><span class="mono accent">04.</span> Experience</h3>
+        <h3 class="section-label"><span class="mono accent">05.</span> Experience</h3>
         <h2 class="section-title">Work history</h2>
         <div class="timeline">
           {experience.map((job, i) => (
@@ -261,7 +284,7 @@ const experience = [
     <!-- EDUCATION -->
     <section id="education">
       <div class="container">
-        <h3 class="section-label"><span class="mono accent">05.</span> Education</h3>
+        <h3 class="section-label"><span class="mono accent">06.</span> Education</h3>
         <h2 class="section-title">Academic background</h2>
         <div class="edu-card">
           <div class="edu-icon">
@@ -325,6 +348,10 @@ const experience = [
   section:first-child { padding-top: 0; }
 
   .section-label { font-size: 0.875rem; color: var(--muted); margin-bottom: 8px; }
+  .approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 8px; }
+  .approach-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+  .approach-title { font-weight: 600; color: var(--accent); margin-bottom: 10px; font-size: 0.95rem; }
+  .approach-desc { color: var(--muted); font-size: 0.875rem; line-height: 1.65; margin: 0; }
   .section-title { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; margin-bottom: 48px; }
 
   /* ─── HERO ─── */
@@ -484,8 +511,9 @@ const experience = [
   /* ─── RESPONSIVE ─── */
   @media (max-width: 600px) {
     nav ul { gap: 16px; }
-    nav ul li:nth-child(n+4) { display: none; }
+    nav ul li:nth-child(n+5) { display: none; }
     .stack-grid { grid-template-columns: 1fr; gap: 24px; }
+    .approach-grid { grid-template-columns: 1fr; gap: 16px; }
     .project-card { padding: 20px; }
     .job-header { flex-direction: column; }
   }
