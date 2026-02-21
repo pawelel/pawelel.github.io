@@ -179,7 +179,6 @@ const experience = [
         <p class="subsection-label">Within the sprint</p>
         <div class="sprint-phases">
           <div class="phase">
-            <p class="phase-num mono">01</p>
             <p class="phase-name">Planning</p>
             <ul>
               <li>Scope &amp; acceptance criteria</li>
@@ -188,7 +187,6 @@ const experience = [
             </ul>
           </div>
           <div class="phase">
-            <p class="phase-num mono">02</p>
             <p class="phase-name">Development</p>
             <ul>
               <li>Implementation</li>
@@ -198,7 +196,6 @@ const experience = [
             </ul>
           </div>
           <div class="phase">
-            <p class="phase-num mono">03</p>
             <p class="phase-name">Quality</p>
             <ul>
               <li>Manual &amp; smoke tests</li>
@@ -206,7 +203,6 @@ const experience = [
             </ul>
           </div>
           <div class="phase">
-            <p class="phase-num mono">04</p>
             <p class="phase-name">Delivery</p>
             <ul>
               <li>PR + CI verification</li>
@@ -408,9 +404,9 @@ const experience = [
   .phase:last-child { border-right: none; }
   .phase-num { font-size: 0.75rem; color: var(--accent); margin-bottom: 8px; letter-spacing: 0.05em; }
   .phase-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 14px; color: var(--accent); }
-  .phase ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px; }
-  .phase ul li { font-size: 0.8rem; color: var(--muted); padding-left: 12px; position: relative; line-height: 1.4; }
-  .phase ul li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; top: 1px; }
+  .phase ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+  .phase ul li { font-size: 0.9rem; color: var(--muted); padding-left: 16px; position: relative; line-height: 1.4; }
+  .phase ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.8em; top: 1px; }
   .approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 8px; }
   .approach-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
   .approach-title { font-weight: 600; color: var(--accent); margin-bottom: 10px; font-size: 0.95rem; }
