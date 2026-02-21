@@ -59,6 +59,20 @@ const projects = [
     link: null,
   },
   {
+    title: 'CopyCost',
+    stack: ['.NET 7', 'MAUI', 'Blazor', 'MudBlazor', 'EF Core'],
+    description: 'Personal Windows desktop tool for tracking and summarising copywriter payments. Supports multiple customers and text categories with per-1000-character pricing, monthly payment summaries, and visual charts. Built as a MAUI Blazor hybrid app with local EF Core persistence and MudBlazor UI.',
+    highlights: ['Customer & category mgmt', 'Monthly summaries', 'Payment charts', 'MAUI Blazor hybrid'],
+    link: 'https://github.com/pawelel/CopyCost',
+  },
+  {
+    title: 'Facility Asset Management System',
+    stack: ['ASP.NET Core', 'Blazor Server', 'EF Core', 'MediatR', 'MudBlazor', 'MSSQL'],
+    description: 'Full-stack system for managing industrial facility assets, devices, areas, and maintenance communicates. Modelled a rich domain spanning assets, categories, situations, coordinates, and inspection parameters. REST API backend with Blazor Server UI, MediatR for command handling, temporal tables for full audit history, and Serilog structured logging.',
+    highlights: ['Rich domain model', 'MediatR CQRS', 'Temporal tables', 'Blazor Server'],
+    link: 'https://github.com/pawelel/Sc3Hosted',
+  },
+  {
     title: 'MCP Server for Outline Wiki',
     stack: ['TypeScript', 'Node.js', 'MCP'],
     description: 'Open-source Model Context Protocol server enabling AI assistants to interact with Outline documentation services. Implemented robust HTTP retry logic with Retry-After header handling, rate-limit backoff, URL sanitization, API key security, and a comprehensive test suite covering edge cases.',
