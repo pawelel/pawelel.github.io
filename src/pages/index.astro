@@ -403,8 +403,8 @@ const experience = [
 
   .section-label { font-size: 0.875rem; color: var(--muted); margin-bottom: 8px; }
   .subsection-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 20px; }
-  .sprint-phases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-  .phase { padding: 24px; border-right: 1px solid var(--border); }
+  .sprint-phases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .phase { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
   .phase:last-child { border-right: none; }
   .phase-num { font-size: 0.75rem; color: var(--accent); margin-bottom: 8px; letter-spacing: 0.05em; }
   .phase-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 14px; color: var(--text); }
@@ -587,9 +587,7 @@ const experience = [
     .stack-grid { grid-template-columns: 1fr; gap: 24px; }
     .approach-grid { grid-template-columns: 1fr; gap: 16px; }
     .sprint-phases { grid-template-columns: 1fr 1fr; }
-    .phase { border-right: none; border-bottom: 1px solid var(--border); }
-    .phase:nth-child(odd) { border-right: 1px solid var(--border); }
-    .phase:nth-last-child(-n+2) { border-bottom: none; }
+    .phase { border-right: none; border-bottom: none; }
     .project-card { padding: 20px; }
     .job-header { flex-direction: column; }
   }
