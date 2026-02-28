@@ -2,16 +2,32 @@
 interface Props {
   title?: string;
   description?: string;
+  lang?: 'en' | 'pl';
+  altLang?: 'en' | 'pl';
+  altPath?: string;
 }
-const { title = 'Paweł Przytuła – Full Stack Developer', description = 'Full Stack Developer specializing in .NET/Blazor, Angular, and Flutter. Based in Poznań, Poland.' } = Astro.props;
+const {
+  title = 'Pawel Przytula - Full Stack Developer',
+  description = 'Full Stack Developer specializing in .NET/Blazor, Angular, and Flutter. Based in Poznan, Poland.',
+  lang = 'en',
+  altLang = 'pl',
+  altPath = '/pl/',
+} = Astro.props;
+
+const baseUrl = 'https://pawelel.github.io';
+const currentPath = lang === 'en' ? '/' : '/pl/';
 ---
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="canonical" href={`${baseUrl}${currentPath}`} />
+  <link rel="alternate" hreflang={lang} href={`${baseUrl}${currentPath}`} />
+  <link rel="alternate" hreflang={altLang} href={`${baseUrl}${altPath}`} />
+  <link rel="alternate" hreflang="x-default" href={`${baseUrl}/`} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
