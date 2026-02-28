@@ -19,7 +19,7 @@ export const en: Translations = {
   },
   hero: {
     greeting: "Hello, I'm",
-    name: 'Pawel Przytula',
+    name: 'Paweł Przytuła',
     role: 'Full Stack Developer',
     bio: 'Specialising in <strong>.NET / Blazor</strong>, <strong>ASP.NET Core MVC</strong>, <strong>Angular</strong>, and <strong>Flutter</strong>. I design and optimise systems for the railway industry - web, mobile, and GPS integrations - handling 30,000+ events/day with real-time visualisation. Based in <strong>Poznan, Poland</strong>.',
     scrollDown: 'scroll down',
