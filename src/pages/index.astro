@@ -1,30 +1,63 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
 
 const techStack = [
   {
     category: 'Primary',
-    items: ['Flutter', 'Dart', 'C#', '.NET Core', 'Blazor Server'],
+    items: [
+      { name: 'Flutter', icon: 'logos:flutter' },
+      { name: 'Dart', icon: 'logos:dart' },
+      { name: 'C#', icon: 'devicon:csharp' },
+      { name: '.NET Core', icon: 'devicon:dotnetcore' },
+      { name: 'Blazor Server', icon: 'devicon:blazor' },
+    ],
   },
   {
     category: 'Web & Mobile',
-    items: ['Angular', 'ASP.NET MVC', 'MAUI', 'TypeScript'],
+    items: [
+      { name: 'Angular', icon: 'logos:angular-icon' },
+      { name: 'ASP.NET MVC', icon: 'devicon:dot-net' },
+      { name: 'MAUI', icon: 'devicon:dotnetcore' },
+      { name: 'TypeScript', icon: 'logos:typescript-icon' },
+    ],
   },
   {
     category: 'Databases',
-    items: ['MSSQL', 'PostgreSQL', 'MySQL', 'MongoDB', 'EF Core'],
+    items: [
+      { name: 'MSSQL', icon: 'devicon:microsoftsqlserver' },
+      { name: 'PostgreSQL', icon: 'logos:postgresql' },
+      { name: 'MySQL', icon: 'logos:mysql-icon' },
+      { name: 'MongoDB', icon: 'logos:mongodb-icon' },
+      { name: 'EF Core', icon: 'devicon:dot-net' },
+    ],
   },
   {
     category: 'DevOps & Tools',
-    items: ['Azure DevOps', 'Docker', 'Git', 'BitBucket', 'Jira', 'Confluence'],
+    items: [
+      { name: 'Azure DevOps', icon: 'devicon:azuredevops' },
+      { name: 'Docker', icon: 'logos:docker-icon' },
+      { name: 'Git', icon: 'logos:git-icon' },
+      { name: 'BitBucket', icon: 'logos:bitbucket' },
+      { name: 'Jira', icon: 'logos:jira' },
+      { name: 'Confluence', icon: 'logos:confluence' },
+    ],
   },
   {
     category: 'Reporting & UI',
-    items: ['DevExpress', 'Grafana', 'Power BI', 'SAP Web Intelligence'],
+    items: [
+      { name: 'DevExpress', icon: 'simple-icons:devexpress' },
+      { name: 'Grafana', icon: 'logos:grafana' },
+      { name: 'Power BI', icon: 'powerbi' },
+      { name: 'SAP Web Intelligence', icon: 'logos:sap' },
+    ],
   },
   {
     category: 'Low-Code',
-    items: ['PowerApps', 'Power Automate'],
+    items: [
+      { name: 'PowerApps', icon: 'powerapps' },
+      { name: 'Power Automate', icon: 'powerautomate' },
+    ],
   },
 ];
 
@@ -158,9 +191,13 @@ const experience = [
           handling <strong>30,000+ events/day</strong> with real-time visualisation. Based in Poznań, Poland.
         </p>
         <div class="hero-links">
-          <a href="https://github.com/pawelel" target="_blank" rel="noopener" class="btn btn-primary">
+          <a href="https://github.com/pawelel" target="_blank" rel="noopener" class="btn btn-outline">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/pawe%C5%82-przytu%C5%82a-61285b102/" target="_blank" rel="noopener" class="btn btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.2 0 22.23 0zM7.06 20.45H3.56V9h3.5v11.45zM5.31 7.43h-.02c-1.17 0-1.93-.8-1.93-1.8 0-1.02.78-1.8 1.97-1.8 1.17 0 1.91.78 1.93 1.8 0 1 .76 1.8-1.95 1.8zM20.45 20.45h-3.5v-5.61c0-1.41-.5-2.37-1.76-2.37-.96 0-1.53.64-1.78 1.27-.09.22-.12.53-.12.84v5.87H9.8s.05-10.37 0-11.45h3.49v1.62c.46-.72 1.28-1.73 3.12-1.73 2.28 0 3.99 1.49 3.99 4.71v6.85z"/></svg>
+            LinkedIn
           </a>
         </div>
         <div class="scroll-hint">
@@ -242,7 +279,10 @@ const experience = [
               <p class="stack-category muted mono">{group.category}</p>
               <div class="stack-items">
                 {group.items.map((item) => (
-                  <span class="tag">{item}</span>
+                  <span class="tag">
+                    <Icon name={item.icon} />
+                    {item.name}
+                  </span>
                 ))}
               </div>
             </div>
@@ -474,11 +514,12 @@ const experience = [
   .stack-items { display: flex; flex-wrap: wrap; gap: 8px; }
 
   .tag {
-    display: inline-block; padding: 4px 12px;
+    display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px;
     background: var(--surface); border: 1px solid var(--border);
     border-radius: 4px; font-size: 0.8rem; color: var(--text);
     transition: border-color 0.2s;
   }
+  .tag :global(svg) { width: 14px; height: 14px; }
   .tag:hover { border-color: var(--accent); color: var(--accent); }
   .tag-sm { font-size: 0.75rem; padding: 3px 10px; }
 
