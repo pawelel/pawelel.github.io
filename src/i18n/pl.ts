@@ -6,7 +6,7 @@ export const pl: Translations = {
   altPath: '/',
   meta: {
     title: 'Paweł Przytuła - Full Stack Developer',
-    description: 'Full Stack Developer specjalizujący się w .NET/Blazor, Angular i Flutter. Poznań, Polska.',
+    description: 'Full Stack Developer specjalizujący się w systemach rozproszonych, .NET/Blazor, Angular i Flutter. Poznań, Polska.',
   },
   nav: {
     about: 'O mnie',
@@ -21,7 +21,7 @@ export const pl: Translations = {
     greeting: 'Cześć, jestem',
     name: 'Paweł Przytuła',
     role: 'Full Stack Developer',
-    bio: 'Specjalizuję się w <strong>.NET / Blazor</strong>, <strong>ASP.NET Core MVC</strong>, <strong>Angular</strong> i <strong>Flutter</strong>. Projektuję i optymalizuję systemy dla branży kolejowej - web, mobile i integracje GPS - obsługując 30 000+ zdarzeń/dzień z wizualizacją w czasie rzeczywistym. Mieszkam w <strong>Poznaniu</strong>.',
+    bio: 'Specjalizuję się w <strong>systemach rozproszonych</strong>, <strong>.NET / Blazor</strong>, <strong>ASP.NET Core MVC</strong>, <strong>Angular</strong> i <strong>Flutter</strong>. Mieszkam w <strong>Poznaniu</strong>.',
     scrollDown: 'przewiń w dół',
   },
   sections: {
